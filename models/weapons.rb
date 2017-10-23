@@ -41,6 +41,13 @@ class Weapon
     return result
   end
 
+  def self.delete_all()
+    sql = "DELETE * FROM weapons"
+    values = []
+    results = SqlRunner.run( sql, values )
+    return results.map {|weapon| Weapon.new( weapon )}
+  end
+  
   def check_stock
     if @quantity < 2
       puts "low"
