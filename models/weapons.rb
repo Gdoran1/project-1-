@@ -27,7 +27,7 @@ class Weapon
   def self.all()
     sql = "SELECT * FROM weapons"
     values = []
-    weapon = SqlRunner.run(sql, values)
+    weapons = SqlRunner.run(sql, values)
     result = weapons.map { |weapon| Weapon.new( weapon ) }
     return result
   end
@@ -47,14 +47,17 @@ class Weapon
     results = SqlRunner.run( sql, values )
     return results.map {|weapon| Weapon.new( weapon )}
   end
-  
-  def check_stock
-    if @quantity < 2
-      puts "low"
-    elsif @quantity > 5
-      puts "high"
-    else
-      puts "medium"
-    end
-  end
+
+  # def check_stock
+  #   if @quantity < 2
+  #     puts "low"
+  #   elsif @quantity > 4
+  #     puts "high"
+  #   else
+  #     puts "medium"
+  #   end
+  # end
+
+
+
 end
