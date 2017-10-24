@@ -5,7 +5,12 @@ require_relative('../models/manufacturer.rb')
 
 get '/weapons' do
   @weapons = Weapon.all()
-  erb( :index )
+  erb( :"weapons/index" )
+end
+
+get '/weapons_index' do
+  @weapons = Weapon.all()
+    erb( :"weapons/weapons_index" )
 end
 
 get '/weapons/new' do

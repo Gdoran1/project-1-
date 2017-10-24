@@ -11,15 +11,13 @@
   <% @weapons.each do |weapon| %>
 
   <tr>
-  <td ><%= Manufacturer.find(weapon.manufacturer_id).name %></td>
+  <td ><%= Weapon.first(weapon.manufacturer_id).name %></td>
     <td> <%= weapon.name %></td>
     <td> <%= weapon.type %></td>
     <td> <%= weapon.quantity %></td>
     <td> <%= weapon.cost_price %></td>
     <td> <%= weapon.retail_price %></td>
-    <td> <%= weapon.markup_value %></td>
-    <td> <%= weapon.check_stock %></td>
-
+    <td> <%= weapon.stock_holding %></td>
   </tr>
   <% end %>
 </table>

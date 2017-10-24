@@ -26,7 +26,7 @@ attr_reader :name, :id
     return result
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM manufacturer WHERE id = $1 "
     values = [id]
     manufacturer = SqlRunner.run(sql, values)

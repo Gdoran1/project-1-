@@ -48,16 +48,19 @@ class Weapon
     return results.map {|weapon| Weapon.new( weapon )}
   end
 
-  # def check_stock
-  #   if @quantity < 2
-  #     puts "low"
-  #   elsif @quantity > 4
-  #     puts "high"
-  #   else
-  #     puts "medium"
-  #   end
-  # end
+  def check_stock
+    if @quantity < 2
+      return "low"
+    elsif @quantity > 4
+      return "high"
+    else
+      return "medium"
+    end
+  end
 
-
+  def markup_value
+  result =  @retail_price - @cost_price
+    return (result / @cost_price) * 100
+  end
 
 end
