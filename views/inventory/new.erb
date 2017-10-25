@@ -1,0 +1,32 @@
+<form method="post" action="/weapons">
+
+  <label for="name">Manufacturer</label>
+  <select id="name" name=" manufacturer_id ">
+
+    <% @manufacturers.each do |manufacturer| %>
+    <option value ="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+    <% end%>
+  </select>
+
+  <label for="name">Weapon Name</label>
+  <select id="name" name=" name ">
+    <% @weapons.each do |weapon| %>
+    <option value="<%= weapon.name %>"><%= weapon.name %></option>
+    <% end %>
+</select>
+
+<label for="quantity">Quantity: </label>
+<input id="quantity" type="quantity" name="quantity" />
+
+
+
+  <label for="name">Cost Price</label>
+  <input id="quantity" type="quantity" name="quantity" />
+
+
+
+  <label for="name">Retail Price</label>
+  <input id="quantity" type="quantity" name="quantity" />
+
+<input type="submit" value="Place Order" />
+</form>

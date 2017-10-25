@@ -1,7 +1,7 @@
 require('pry-byebug')
 require_relative('../models/weapons.rb')
 require_relative('../models/manufacturer.rb')
-
+require_relative('../models/type.rb')
 
 manufacturer1 = Manufacturer.new({
   'name' => 'Häkke'

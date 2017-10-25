@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/weapons.rb')
 require_relative('../models/manufacturer.rb')
+require_relative('../models/type.rb')
 
 get '/weapons' do
   @weapons = Weapon.all()
@@ -10,7 +11,14 @@ end
 
 get '/weapons_index' do
   @weapons = Weapon.all()
-    erb( :"weapons/weapons_index" )
+    erb( :"weapons/index" )
+end
+
+get '/inventory/new' do
+  @manufacturers = Manufacturer.all()
+
+  @weapons = Weapon.all()
+  erb( :"inventory/new" )
 end
 
 get '/weapons/new' do

@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('weapons.rb')
+require_relative('type.rb')
 
 class Manufacturer
 

@@ -1,4 +1,4 @@
--- DROP TABLE type;
+DROP TABLE type;
 DROP TABLE weapons;
 DROP TABLE manufacturer;
 
@@ -13,7 +13,7 @@ CREATE TABLE weapons
 (
   id SERIAL4 primary key,
   name VARCHAR(255) not null,
-  type VARCHAR(255) not null,
+  type VARCHAR(255),
   manufacturer_id INT4 references manufacturer(id),
   quantity INT4,
   cost_price INT4,
@@ -21,9 +21,9 @@ CREATE TABLE weapons
   mark_up INT4
 );
 
--- CREATE TABLE type
--- (
---   id SERIAL4 primary key
---   type VARCHAR(255) not null,
---   weapon_id INT4 references weapon(id)
--- );
+CREATE TABLE type
+(
+  id SERIAL4 primary key,
+  type VARCHAR(255),
+  weapon_id INT4 references weapons(id)
+);
