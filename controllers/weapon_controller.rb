@@ -5,7 +5,7 @@ require_relative('../models/manufacturer.rb')
 
 get '/weapons' do
   @weapons = Weapon.all()
-  erb( :"weapons/index" )
+  erb( :"inventory/index" )
 end
 
 get '/weapons_index' do
@@ -15,13 +15,13 @@ end
 
 get '/weapons/new' do
   @weapons = Weapon.all()
-  erb( :new )
+  erb( :"weapons/new" )
 end
 
 post '/weapons' do
-  @weapons = Weapon.new(options)
+  @weapons = Weapon.new(params)
   @weapons.save()
-  erb( :create )
+  redirect '/weapons'
 end
 
 post '/weapons/delete/:id' do

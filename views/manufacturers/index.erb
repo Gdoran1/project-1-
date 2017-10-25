@@ -1,3 +1,8 @@
 <% @manufacturers.each do |manufacturer| %>
 <p>Name: <%=manufacturer.name() %></p>
 <% end %>
+
+
+<form method="get" action="/manufacturers/new">
+  <input type="submit" value="Create"/>
+</form>

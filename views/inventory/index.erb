@@ -1,4 +1,6 @@
-<table>
+<table style = border: medium solid; position: fixed;
+  border = 6; width = 99%; text-align: center; background-color: gold>
+
   <tr><th> Manufacturer</th>
     <th> Weapon Name</th>
     <th> Weapon Type</th>
@@ -8,6 +10,7 @@
     <th> Mark up %</th>
     <th> Stock Holding</th>
   </tr>
+
   <% @weapons.each do |weapon| %>
 
   <tr>
@@ -19,7 +22,6 @@
     <td> <%= weapon.retail_price %></td>
     <td> <%= weapon.markup_value %></td>
     <td> <%= weapon.check_stock %></td>
-
   </tr>
   <% end %>
 </table>

@@ -10,13 +10,13 @@ end
 
 get '/manufacturers/new' do
   @manufacturers = Manufacturer.all
-  erb( :new )
+  erb( :"manufacturers/new" )
 end
 
 post '/manufacturers' do
-  @manufacturers = Manufacturer.new(options)
+  @manufacturers = Manufacturer.new(params)
   @manufacturers.save()
-  erb( :create )
+  redirect ('/manufacturers')
 end
 
 post '/manufacturers/delete/:id' do

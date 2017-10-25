@@ -6,7 +6,7 @@ class Manufacturer
 attr_reader :name, :id
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
@@ -34,10 +34,9 @@ attr_reader :name, :id
     return result
   end
 
-  def self.delete_all()
-    sql = "DELETE * FROM manufacturer"
-    values = []
+  def self.delete ()
+    sql = "DELETE FROM manufacturer WHERE id = $1"
+    values = [@id]
     results = SqlRunner.run( sql, values )
-    return results.map {|manufacturer| Manufacturer.new( manufacturer )}
   end
 end

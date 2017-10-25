@@ -25,7 +25,7 @@ weapon1 = Weapon.new({
   'name' => 'Fabian Strategy',
   'type' => 'Auto Rifle',
   'manufacturer_id' => manufacturer1.id,
-  'quantity' => 2,
+  'quantity' => 6,
   'cost_price' => 200,
   'retail_price' => 600
   })
@@ -36,9 +36,9 @@ weapon2 = Weapon.new({
   'name' => 'Cúchulainn-D',
   'type' => 'Shotgun',
   'manufacturer_id' => manufacturer1.id,
-  'quantity' => 4,
+  'quantity' => 5,
   'cost_price' => 100,
-  'retail_price' => 350
+  'retail_price' => 400
   })
 
   weapon2.save()
@@ -102,7 +102,7 @@ weapon8 = Weapon.new({
   'name' => 'Suros MKB-21',
   'type' => 'Shotgun',
   'manufacturer_id' => manufacturer3.id,
-  'quantity' => 2,
+  'quantity' => 5,
   'cost_price' => 100,
   'retail_price' => 300
   })

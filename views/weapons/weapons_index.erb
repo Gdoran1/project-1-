@@ -1,3 +1,7 @@
 <% @weapons.each do |weapon| %>
-<p>Name: <%=weapon.name() %><span>margin: leftHolding <%=weapon.quantity %></span></p>
+<p>Name: <%=weapon.name() %><span></span> Holding <%=weapon.quantity %></p>
 <% end %>
+
+<form method="get" action="/weapons/new">
+  <input type="submit" value="Create"/>
+</form>

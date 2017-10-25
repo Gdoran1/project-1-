@@ -50,11 +50,11 @@ class Weapon
 
   def check_stock
     if @quantity < 2
-      return "low"
+      return "-LOW-"
     elsif @quantity > 4
-      return "high"
+      return "-HIGH-"
     else
-      return "medium"
+      return "-MEDIUM-"
     end
   end
 
