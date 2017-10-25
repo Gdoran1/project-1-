@@ -40,4 +40,11 @@ attr_reader :name, :id
     values = [@id]
     results = SqlRunner.run( sql, values )
   end
+  
+  def self.delete_all()
+    sql = "DELETE FROM manufacturer"
+    values = []
+    results = SqlRunner.run( sql, values )
+    return results.map {|manufacturer| Manufacturer.new( manufacturer )}
+  end
 end

@@ -18,13 +18,12 @@ h6 {
   padding: 40px;
   font-size: 20px;
   font-family: Inconsolata, monospace;
-  /*font-style: italic;*/
   font-weight: bold;
 }
 
 .banner h1, .banner h3, .banner h6 {
   margin: 0;
-  text-shadow: 2px 2px 6px gold;
+  text-shadow: 2px 2px 6px #f9e54a;
   text-align: right;
 }
 
@@ -37,7 +36,7 @@ h6 {
   align-items: left;
 }
 
-.button {
+/*.button {
   background-color: #4CAF50; /* Green */
     border: none;
     color: #000;
@@ -46,7 +45,7 @@ h6 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
+}*/
 /*.btn {
   color: red;
   display: flex;

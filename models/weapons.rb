@@ -4,13 +4,13 @@ require_relative('type.rb')
 
 class Weapon
 
-  attr_reader :name, :type, :manufacturer_id,
+  attr_reader :name, :type_id, :manufacturer_id,
   :cost_price, :retail_price, :quantity, :id
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @type = options['type']
+    @type_id = options['type_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
     @cost_price = options['cost_price'].to_i
     @retail_price = options['retail_price'].to_i
@@ -18,9 +18,9 @@ class Weapon
   end
 
   def save()
-    sql = "INSERT INTO weapons(name, type, manufacturer_id, cost_price, retail_price, quantity)
+    sql = "INSERT INTO weapons(name, type_id, manufacturer_id, cost_price, retail_price, quantity)
     values ($1, $2, $3, $4, $5, $6) RETURNING * "
-    values = [@name, @type, @manufacturer_id, @cost_price, @retail_price, @quantity]
+    values = [@name, @type_id, @manufacturer_id, @cost_price, @retail_price, @quantity]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -43,7 +43,7 @@ class Weapon
   end
 
   def self.delete_all()
-    sql = "DELETE * FROM weapons"
+    sql = "DELETE FROM weapons"
     values = []
     results = SqlRunner.run( sql, values )
     return results.map {|weapon| Weapon.new( weapon )}

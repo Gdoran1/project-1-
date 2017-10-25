@@ -16,7 +16,7 @@ end
 
 get '/inventory/new' do
   @manufacturers = Manufacturer.all()
-
+  @type = Type.all()
   @weapons = Weapon.all()
   erb( :"inventory/new" )
 end

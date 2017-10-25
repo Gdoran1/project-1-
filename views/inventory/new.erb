@@ -1,7 +1,6 @@
 <form method="post" action="/weapons">
-
-  <label for="name">Manufacturer</label>
-  <select id="name" name=" manufacturer_id ">
+  <label for="manufacturer_id">Manufacturer</label>
+  <select id="manufacturer_id" name="manufacturer_id">
 
     <% @manufacturers.each do |manufacturer| %>
     <option value ="<%= manufacturer.id %>"><%= manufacturer.name %></option>
@@ -9,24 +8,24 @@
   </select>
 
   <label for="name">Weapon Name</label>
-  <select id="name" name=" name ">
-    <% @weapons.each do |weapon| %>
-    <option value="<%= weapon.name %>"><%= weapon.name %></option>
+  <input id="name" type="string" name="name" />
+
+
+  <label for="type_id">Weapon Type</label>
+  <select id="type_id" name="type_id">
+    <% @type.each do |item| %>
+    <option value="<%= item.id %>"><%= item.type %></option>
     <% end %>
-</select>
+  </select>
 
-<label for="quantity">Quantity: </label>
-<input id="quantity" type="quantity" name="quantity" />
+  <label for="quantity">Quantity: </label>
+  <input id="quantity" type="number" name="quantity" />
 
+  <label for="cost_price">Cost Price</label>
+  <input id="cost_price" type="number" name="cost_price" />
 
+  <label for="retail_price">Retail Price</label>
+  <input id="retail_price" type="number" name="retail_price" />
 
-  <label for="name">Cost Price</label>
-  <input id="quantity" type="quantity" name="quantity" />
-
-
-
-  <label for="name">Retail Price</label>
-  <input id="quantity" type="quantity" name="quantity" />
-
-<input type="submit" value="Place Order" />
+  <input type="submit" value="Place Order" />
 </form>

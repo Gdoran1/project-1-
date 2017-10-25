@@ -3,6 +3,10 @@ require_relative('../models/weapons.rb')
 require_relative('../models/manufacturer.rb')
 require_relative('../models/type.rb')
 
+Weapon.delete_all()
+Type.delete_all()
+Manufacturer.delete_all()
+
 manufacturer1 = Manufacturer.new({
   'name' => 'Häkke'
 })
@@ -21,9 +25,34 @@ manufacturer3 = Manufacturer.new({
 
 manufacturer3.save()
 
+type1 = Type.new({
+  'type' => 'Auto Rifle'
+  })
+
+type1.save()
+
+type2 = Type.new({
+  'type' => 'Scout Rifle'
+  })
+
+type2.save()
+
+type3 = Type.new({
+  'type' => 'Sniper Rifle'
+  })
+
+type3.save()
+
+type4 = Type.new({
+  'type' => 'Shotgun'
+  })
+
+type4.save()
+
+
 weapon1 = Weapon.new({
   'name' => 'Fabian Strategy',
-  'type' => 'Auto Rifle',
+  'type_id' => type1.id,
   'manufacturer_id' => manufacturer1.id,
   'quantity' => 6,
   'cost_price' => 200,
@@ -34,7 +63,7 @@ weapon1 = Weapon.new({
 
 weapon2 = Weapon.new({
   'name' => 'Cúchulainn-D',
-  'type' => 'Shotgun',
+  'type_id' => type4.id,
   'manufacturer_id' => manufacturer1.id,
   'quantity' => 5,
   'cost_price' => 100,
@@ -45,7 +74,7 @@ weapon2 = Weapon.new({
 
 weapon3 = Weapon.new({
   'name' => 'Stillpiercer',
-  'type' => 'Sniper Rifle',
+  'type_id' => type3.id,
   'manufacturer_id' => manufacturer1.id,
   'quantity' => 1,
   'cost_price' => 100,
@@ -56,7 +85,7 @@ weapon3 = Weapon.new({
 
 weapon4 = Weapon.new({
   'name' => 'Hard Light',
-  'type' => 'Auto Rifle',
+    'type_id' => type1.id,
   'manufacturer_id' => manufacturer2.id,
   'quantity' => 3,
   'cost_price' => 200,
@@ -67,7 +96,7 @@ weapon4 = Weapon.new({
 
 weapon5 = Weapon.new({
   'name' => 'Hung Jury SR4',
-  'type' => 'Scout Rifle',
+  'type_id' =>  type2.id,
   'manufacturer_id' => manufacturer2.id,
   'quantity' => 3,
   'cost_price' => 100,
@@ -78,7 +107,7 @@ weapon5 = Weapon.new({
 
 weapon6 = Weapon.new({
   'name' => 'EX-MACHINA~',
-  'type' => 'Sniper Rifle',
+  'type_id' => type3.id,
   'manufacturer_id' => manufacturer2.id,
   'quantity' => 2,
   'cost_price' => 200,
@@ -89,7 +118,7 @@ weapon6 = Weapon.new({
 
 weapon7 = Weapon.new({
   'name' => 'Suros Regime',
-  'type' => 'Auto Rifle',
+    'type_id' => type1.id,
   'manufacturer_id' => manufacturer3.id,
   'quantity' => 1,
   'cost_price' => 200,
@@ -100,7 +129,7 @@ weapon7 = Weapon.new({
 
 weapon8 = Weapon.new({
   'name' => 'Suros MKB-21',
-  'type' => 'Shotgun',
+  'type_id' => type4.id,
   'manufacturer_id' => manufacturer3.id,
   'quantity' => 5,
   'cost_price' => 100,
@@ -111,7 +140,7 @@ weapon8 = Weapon.new({
 
 weapon9 = Weapon.new({
   'name' => 'Suros JLL-19',
-  'type' => 'Sniper Rifle',
+  'type_id' => type3.id,
   'manufacturer_id' => manufacturer3.id,
   'quantity' => 1,
   'cost_price' => 100,

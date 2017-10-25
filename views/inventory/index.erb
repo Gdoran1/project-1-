@@ -4,7 +4,7 @@
 
 
 <table style = border: medium solid; position: fixed;
-  border = 6; width = 99%; text-align: center; background-color: gold>
+  border = 6; width = 99%; text-align: center>
 
   <tr><th> Manufacturer</th>
     <th> Weapon Name</th>
@@ -21,7 +21,7 @@
   <tr>
   <td ><%= Manufacturer.find(weapon.manufacturer_id).name %></td>
     <td> <%= weapon.name %></td>
-    <td> <%= weapon.type %></td>
+    <td> <%= Type.find(weapon.type_id).type %></td>
     <td> <%= weapon.quantity %></td>
     <td> <%= weapon.cost_price %></td>
     <td> <%= weapon.retail_price %></td>
