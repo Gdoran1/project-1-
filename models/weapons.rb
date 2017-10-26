@@ -4,8 +4,8 @@ require_relative('type.rb')
 
 class Weapon
 
-  attr_reader :name, :type_id, :manufacturer_id,
-  :cost_price, :retail_price, :quantity, :id
+  attr_reader(:name, :type_id, :manufacturer_id,
+  :cost_price, :retail_price, :quantity, :id)
 
   def initialize(options)
     @id = options['id'].to_i

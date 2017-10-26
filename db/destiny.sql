@@ -6,7 +6,8 @@ DROP TABLE manufacturer;
 CREATE TABLE manufacturer
 (
   id SERIAL4 primary key,
-  name VARCHAR(255) not null
+  name VARCHAR(255) not null,
+  image_url VARCHAR(255)
 );
 
 CREATE TABLE type
@@ -14,7 +15,6 @@ CREATE TABLE type
   id SERIAL4 primary key,
   type VARCHAR(255)
 );
-
 
 CREATE TABLE weapons
 (

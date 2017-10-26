@@ -1,7 +1,16 @@
-<% @weapons.each do |weapon| %>
-<p>Name: <%=weapon.name() %><span></span> Holding <%=weapon.quantity %></p>
-<% end %>
+<table align = center
+  margin = 10px; position = right; border = 6; width = 50%;>
 
-<!-- <form method="get" action="/weapons/new">
-  <input type="submit" value="Create"/>
-</form> -->
+  <tr>
+    <th> Weapon Name</th>
+    <th> Quantity</th>
+  </tr>
+
+  <% @weapons.each do |weapon| %>
+
+  <tr>
+    <td> <%= weapon.name %></td>
+    <td> <%= weapon.quantity %></td>
+  </tr>
+  <% end %>
+</table>

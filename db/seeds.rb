@@ -8,19 +8,22 @@ Type.delete_all()
 Manufacturer.delete_all()
 
 manufacturer1 = Manufacturer.new({
-  'name' => 'Häkke'
+  'name' => 'Häkke',
+  'image_url' => 'https://pbs.twimg.com/profile_images/624774722119569408/G8HOAfuY_400x400.jpg'
 })
 
 manufacturer1.save()
 
 manufacturer2 = Manufacturer.new({
-  'name' => 'Omolon'
+  'name' => 'Omolon',
+  'image_url' => 'https://cdn.dribbble.com/users/73104/screenshots/2868965/omolon_1.gif'
 })
 
 manufacturer2.save()
 
 manufacturer3 = Manufacturer.new({
-  'name' => 'Suros'
+  'name' => 'Suros',
+  'image_url' => 'https://cdna.artstation.com/p/assets/covers/images/001/108/352/medium/kieran-baker-suros-wallpaper-by-kieranbaker-d93cvd4.jpg?1440230322'
 })
 
 manufacturer3.save()

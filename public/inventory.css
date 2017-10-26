@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   font-family: monospace, Arial, sans-serif;
   font-weight: bold;
-  background: #798cad;
+  background: #6e8ab7;
 }
 h1 { font-size: 80px; }
 
@@ -14,7 +14,9 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 4px;
 }
+
 h6 {
+  padding: 40px;
   font-size: 20px;
   font-family: monospace;
   font-weight: bold;
@@ -31,49 +33,11 @@ h6 {
   background: url('https://assets.vg247.com/current//2017/03/destiny-ghost.png') center/cover no-repeat;
   height: 450px;
   display: block;
-  /*justify-content: flex-end;
-  align-items: left;*/
+  justify-content: flex-end;
+  align-items: left;
 }
 
-
-
-
-/*.grid {
-  border: solid 3px blue;
+.test {
+  width: 150px;
+  height: 150px;
 }
-
-.grid-row {
-display: flex;
-justify-content: center;
-flex-direction: column;
-/*align-items: center;*/
-}
-
-.cell {
-  flex: 1;
-  /*justify-content: center;*/
-  align-items: center;
-  padding: 10px;
-  border: solid 3px blue;
-}
-
-@media all and ( min-width: 480px ) {
-
-  .grid-row-sm {
-    flex-direction: row;
-  }
-}
-
-@media all and ( min-width: 720px ) {
-
-  .grid-row-md {
-    flex-direction: row;
-  }
-}
-
-@media all and ( min-width: 960px ) {
-
-  .grid-row-lg {
-    flex-direction: row;
-  }
-}*/

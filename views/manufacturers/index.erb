@@ -1,8 +1,14 @@
-<% @manufacturers.each do |manufacturer| %>
-<p>Name: <%=manufacturer.name() %></p>
-<% end %>
+<div id="box-manufacturers"
+     style="display: flex; justify-content=centre;" >   
 
+<% @manufacturers.each do |manufacturer| %>
+<figure>
+  <p>Name: <%=manufacturer.name() %></p>
+  <p><img class="test" src="<%=manufacturer.image_url %>" />  </p>
+</figure>
+<% end %>
+</div>
 
 <form method="get" action="/manufacturers/new">
-  <input type="submit" value="Create"/>
+<input type="submit" value="Create"/>
 </form>

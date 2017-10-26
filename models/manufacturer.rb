@@ -4,17 +4,18 @@ require_relative('type.rb')
 
 class Manufacturer
 
-attr_reader :name, :id
+attr_reader(:name, :id, :image_url)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @image_url = options['image_url']
   end
 
   def save ()
-    sql = "INSERT INTO manufacturer(name)
-    values ($1) RETURNING * "
-    values = [@name]
+    sql = "INSERT INTO manufacturer(name, image_url)
+    values ($1, $2) RETURNING * "
+    values = [@name, @image_url]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -40,7 +41,7 @@ attr_reader :name, :id
     values = [@id]
     results = SqlRunner.run( sql, values )
   end
-  
+
   def self.delete_all()
     sql = "DELETE FROM manufacturer"
     values = []
